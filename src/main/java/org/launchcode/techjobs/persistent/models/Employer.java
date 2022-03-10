@@ -13,8 +13,9 @@ import java.util.List;
 //For the purposes of this application, an employer can only have one location.
 @Entity
 public class Employer extends AbstractEntity {
+
     @OneToMany
-    @JoinColumn
+    @JoinColumn(name = "employer_id")
     private List<Job> jobs = new ArrayList<>();
 
     @Valid
