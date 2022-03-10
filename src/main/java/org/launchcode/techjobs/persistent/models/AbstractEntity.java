@@ -14,7 +14,8 @@ public abstract class AbstractEntity {
     @GeneratedValue
     private int id;
 
-    @NotEmpty
+    @NotNull(message="please do not leave empty")
+    @NotEmpty(message="please do not leave empty")
     @Size(min=3, message="Name must be at least 3 characters long")
     private String name;
 
