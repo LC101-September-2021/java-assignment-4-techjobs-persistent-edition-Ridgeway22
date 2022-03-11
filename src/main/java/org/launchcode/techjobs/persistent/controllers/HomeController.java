@@ -33,6 +33,7 @@ public class HomeController {
 
         model.addAttribute("title", "My Jobs");
         model.addAttribute("employers", employerRepository.findAll());
+        model.addAttribute("jobs", jobRepository.findAll());
         return "index";
     }
 
