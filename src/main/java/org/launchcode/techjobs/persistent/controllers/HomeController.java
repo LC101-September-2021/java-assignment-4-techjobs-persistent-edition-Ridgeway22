@@ -56,10 +56,7 @@ public class HomeController {
             return "add";
         }
 
-
         newJob.setEmployer(results.get());
-
-
         List<Skill> skillObjs = (List<Skill>) skillRepository.findAllById(skills);
         newJob.setSkills(skillObjs);
         System.out.println(newJob);
@@ -69,7 +66,7 @@ public class HomeController {
     }
 
     @GetMapping("view/{jobId}")
-    public String displayViewJob(Model model, @PathVariable int jobId) {
+    public String displayViewJob(Model model, @PathVariable(required = false)  Integer jobId) {
         Optional id = jobRepository.findById(jobId);
         if (id.isPresent()) {
             Job jobs = (Job) id.get();
@@ -78,6 +75,22 @@ public class HomeController {
         } else {
             return "redirect:../";
         }
+
+//        if (jobId == null) {
+//            model.addAttribute("title", "All Events");
+//            model.addAttribute("events", jobRepository.findAll());
+//        } else {
+//            Optional<Job> result = jobRepository.findById(jobId);
+//            if (result.isEmpty()) {
+//                model.addAttribute("title", "Invalid Category ID: " + jobId);
+//            } else {
+//                Job category = result.get();
+//                model.addAttribute("title", "Events in category: " + category.getName());
+//                model.addAttribute("events", category.getId());
+//
+//            }
+//        }
+//        return "view";
     }
 
 

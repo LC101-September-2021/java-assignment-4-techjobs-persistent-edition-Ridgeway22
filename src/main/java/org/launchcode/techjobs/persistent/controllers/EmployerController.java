@@ -1,6 +1,7 @@
 package org.launchcode.techjobs.persistent.controllers;
 
 import org.launchcode.techjobs.persistent.models.Employer;
+import org.launchcode.techjobs.persistent.models.Skill;
 import org.launchcode.techjobs.persistent.models.data.EmployerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -45,7 +46,7 @@ public class EmployerController {
     }
 
     @GetMapping("view/{employerId}")
-    public String displayViewEmployer(Model model, @PathVariable int employerId) {
+    public String displayViewEmployer(Model model, @PathVariable Integer employerId) {
 
         Optional optEmployer = employerRepository.findById(employerId);
         if (optEmployer.isPresent()) {
@@ -55,5 +56,20 @@ public class EmployerController {
         } else {
             return "redirect:../";
         }
-    }
+//        if (employerId == null) {
+//            model.addAttribute("title", "All Events");
+//            model.addAttribute("events", employerRepository.findAll());
+//        } else {
+//            Optional<Employer> result = employerRepository.findById(employerId);
+//            if (result.isEmpty()) {
+//                model.addAttribute("title", "Invalid Category ID: " + employerId);
+//            } else {
+//                Employer category = result.get();
+//                model.addAttribute("title", "Events in category: " + category.getName());
+//                model.addAttribute("events", category.getLocation());
+//
+//            }
+//        }
+//        return "view";
+   }
 }

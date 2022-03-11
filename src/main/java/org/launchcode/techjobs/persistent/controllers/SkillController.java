@@ -2,6 +2,7 @@ package org.launchcode.techjobs.persistent.controllers;
 
 
 import org.launchcode.techjobs.persistent.models.Employer;
+import org.launchcode.techjobs.persistent.models.Job;
 import org.launchcode.techjobs.persistent.models.Skill;
 import org.launchcode.techjobs.persistent.models.data.SkillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,7 @@ public class SkillController {
 
     @PostMapping("add")
     public String processAddSkillForm(@ModelAttribute @Valid Skill newSkill,
-                                         Errors errors, Model model) {
+                                      Errors errors, Model model) {
 
         if (errors.hasErrors()) {
             model.addAttribute(new Skill());
@@ -47,7 +48,7 @@ public class SkillController {
     }
 
     @GetMapping("view/{employerId}")
-    public String displayViewSkill(Model model, @PathVariable int skillId) {
+    public String displayViewSkill(Model model, @PathVariable(required = false) Integer skillId) {
 
         Optional optSkill = skillRepository.findById(skillId);
         if (optSkill.isPresent()) {
@@ -57,5 +58,20 @@ public class SkillController {
         } else {
             return "redirect:../";
         }
+//        if (skillId == null) {
+//            model.addAttribute("title", "All Events");
+//            model.addAttribute("events", skillRepository.findAll());
+//        } else {
+//            Optional<Skill> result = skillRepository.findById(skillId);
+//            if (result.isEmpty()) {
+//                model.addAttribute("title", "Invalid Category ID: " + skillId);
+//            } else {
+//                Skill category = result.get();
+//                model.addAttribute("title", "Events in category: " + category.getName());
+//                model.addAttribute("events", category.getDescription());
+//
+//            }
+//        }
+//        return "view";
     }
 }
