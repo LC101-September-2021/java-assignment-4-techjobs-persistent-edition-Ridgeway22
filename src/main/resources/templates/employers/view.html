@@ -11,27 +11,38 @@
 <!--    <p th:text="${'Name: ' + employer.name}"></p>-->
 <!--    <p th:text="${'Location: ' + employer.location}"></p>-->
     <table class="job-listing">
-        <tr th:each="job : ${jobs}">
-            <td>
-                <p>
-                    Job Id:
-                    <a th:href="@{'/view/' + ${job.id}}" th:text="${job.id}"></a>
-                </p>
-                <p th:text="${'Name: ' + job.name}"></p>
-                <p>
-                    Employer:
-                    <a th:href="@{'/employers/view/' + ${job.employer.id}}" th:text="${job.employer.name}"></a>
-                </p>
-                <p>
-                    Skills:
-                <ul th:each="skill : ${job.skills}">
-                    <li>
-                        <a th:href="@{'/skills/view/' + ${skill.id}}" th:text="${skill.name}"></a>
-                    </li>
-                </ul>
-                </p>
-            </td>
-        </tr>
+        <div class="job-listing">
+            <p th:text="${'Name: ' + employer.name}"></p>
+            <p th:text="${'Location: ' + employer.location}"></p>
+
+<!--            <ul>-->
+<!--                <li th:each="job : ${employer.jobs}">-->
+<!--                    <a th:href="@{'/view/' + ${job.id}}" th:text="${job.name}"></a>-->
+<!--                </li>-->
+<!--            </ul>-->
+        </div>
+
+<!--        <tr th:each="job : ${jobs}">-->
+<!--            <td>-->
+<!--                <p>-->
+<!--                    Job Id:-->
+<!--                    <a th:href="@{'/view/' + ${job.id}}" th:text="${job.id}"></a>-->
+<!--                </p>-->
+<!--                <p th:text="${'Name: ' + job.name}"></p>-->
+<!--                <p>-->
+<!--                    Employer:-->
+<!--                    <a th:href="@{'/employers/view/' + ${job.employer.id}}" th:text="${job.employer.name}"></a>-->
+<!--                </p>-->
+<!--                <p>-->
+<!--                    Skills:-->
+<!--                <ul th:each="skill : ${job.skills}">-->
+<!--                    <li>-->
+<!--                        <a th:href="@{'/skills/view/' + ${job.skill.id}}" th:text="${job.skill.name}"></a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--                </p>-->
+<!--            </td>-->
+<!--        </tr>-->
     </table>
 </div>
 

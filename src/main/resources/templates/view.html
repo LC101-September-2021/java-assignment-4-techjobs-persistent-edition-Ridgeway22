@@ -10,16 +10,18 @@
 <div class="job-listing">
     <p th:text="${'ID: ' + job.id}"></p>
     <p th:text="${'Name: ' + job.name}"></p>
-    <p>
-        Employer: <a th:href="@{'/employers/view/' + ${job.employer.id}}" th:text="${job.employer.name}"></a>
-    </p>
-    <p> Skills:
-        <ul>
-            <li th:each="skill : ${job.skills}">
-                <a th:href="@{'/skills/view/' + ${skill.id}}" th:text="${skill.name}"></a>
-            </li>
-        </ul>
-    </p>
+<!--    <p th:text="${'Employer: ' + employer.name}"></p>-->
+<!--    <p th:text="${'Skills: ' + skill.name}"></p>-->
+<!--    <p>-->
+<!--        Employer: <a th:href="@{'/employers/view/' + ${job.employer.id}}" th:text="${job.employer.name}"></a>-->
+<!--    </p>-->
+<!--    <p> Skills:-->
+<!--        <ul>-->
+<!--            <li th:each="skill : ${job.skills}">-->
+<!--                <a th:href="@{'/skills/view/' + ${skill.id}}" th:text="${skill.name}"></a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </p>-->
 </div>
 
 
