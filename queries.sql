@@ -1,5 +1,5 @@
 -- Part 1: Test it with SQL
-id (int), name varchar(250), employer_id (int);
+id (int), name varchar(250), employer_id (int), employer varchar(250), skill varchar(250);
 -- Part 2: Test it with SQL
 SELECT name
 FROM employer

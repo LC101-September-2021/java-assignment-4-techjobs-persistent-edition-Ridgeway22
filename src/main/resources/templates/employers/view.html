@@ -8,43 +8,21 @@
 <nav th:replace="fragments :: page-header"></nav>
 
 <div class="job-listing">
-<!--    <p th:text="${'Name: ' + employer.name}"></p>-->
-<!--    <p th:text="${'Location: ' + employer.location}"></p>-->
-    <table class="job-listing">
-        <div class="job-listing">
-            <p th:text="${'Name: ' + employer.name}"></p>
-            <p th:text="${'Location: ' + employer.location}"></p>
+    <p th:text="${'Name: ' + employer.name}"></p>
+    <p th:text="${'Location: ' + employer.location}"></p>
 
-<!--            <ul>-->
-<!--                <li th:each="job : ${employer.jobs}">-->
-<!--                    <a th:href="@{'/view/' + ${job.id}}" th:text="${job.name}"></a>-->
-<!--                </li>-->
-<!--            </ul>-->
-        </div>
+    <p>Jobs:
+        <ul>
+            <li th:each="job : ${employer.jobs}">
+                <a th:href="@{'/view/' + ${job.id}}" th:text="${job.name}"></a>
+            </li>
+       </ul>
+    </p>
 
-<!--        <tr th:each="job : ${jobs}">-->
-<!--            <td>-->
-<!--                <p>-->
-<!--                    Job Id:-->
-<!--                    <a th:href="@{'/view/' + ${job.id}}" th:text="${job.id}"></a>-->
-<!--                </p>-->
-<!--                <p th:text="${'Name: ' + job.name}"></p>-->
-<!--                <p>-->
-<!--                    Employer:-->
-<!--                    <a th:href="@{'/employers/view/' + ${job.employer.id}}" th:text="${job.employer.name}"></a>-->
-<!--                </p>-->
-<!--                <p>-->
-<!--                    Skills:-->
-<!--                <ul th:each="skill : ${job.skills}">-->
-<!--                    <li>-->
-<!--                        <a th:href="@{'/skills/view/' + ${job.skill.id}}" th:text="${job.skill.name}"></a>-->
-<!--                    </li>-->
-<!--                </ul>-->
-<!--                </p>-->
-<!--            </td>-->
-<!--        </tr>-->
-    </table>
+
 </div>
+
+
 
 
 </body>
