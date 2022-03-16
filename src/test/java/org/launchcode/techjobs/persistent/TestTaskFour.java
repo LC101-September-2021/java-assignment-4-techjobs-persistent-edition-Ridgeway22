@@ -10,6 +10,7 @@ import org.launchcode.techjobs.persistent.models.Employer;
 import org.launchcode.techjobs.persistent.models.Job;
 import org.launchcode.techjobs.persistent.models.Skill;
 import org.launchcode.techjobs.persistent.models.data.JobRepository;
+import org.launchcode.techjobs.persistent.models.data.SkillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ExtendedModelMap;
 import org.springframework.ui.Model;
@@ -109,7 +110,7 @@ public class TestTaskFour extends AbstractTest {
     /*
     * Verifies that HomeController has an @Autowired skillRepository field
     * */
-//    @Test
+//  @Test
 //    public void testHomeControllerHasSkillRepository () throws ClassNotFoundException {
 //        Class homeControllerClass = getClassByName("controllers.HomeController");
 //        Field skillRepositoryField = null;
